@@ -182,8 +182,7 @@ main {
 
 /*----- Pied de page (Footer) ----------------------------------*/
 footer {
-  background: #222;
-  color: #ddd;
+  color: #fff;
   padding: 1em;
   text-align: center;
   font-family: "Cairo", sans-serif;
@@ -194,7 +193,6 @@ footer {
 }
 
 footer a {
-  color: #7cbcdb;
   text-decoration: none;
 }
 
