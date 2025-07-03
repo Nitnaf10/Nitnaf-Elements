@@ -16,7 +16,7 @@ const widgets = [
     url: "digital-clock",
 	"languages": [
 		"PHP",
-		"SCSS",
+		"SASS",
 		"HTML",
 		"JS",
 		"CSS"
@@ -42,5 +42,5 @@ const CodeLanguages = [
 	"PHP",
 	"HTML",
 	"CSS",
-	"SCSS"
+	"SASS"
 ]
