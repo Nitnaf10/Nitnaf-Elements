@@ -66,7 +66,7 @@ $form_submitted = !empty($_GET);
 <head>
     <meta charset="UTF-8" />
     <title>Générateur d'Horloge</title>
-    <link rel="stylesheet" href="setstyles.scss" />
+    <link rel="stylesheet" href="setstyles.css" />
     <style>
         .card div {
             display: flex;
