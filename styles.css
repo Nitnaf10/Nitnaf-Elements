@@ -207,11 +207,11 @@ footer a:hover {
   }
 
   .flex > .edit {
-    content: url('images/edit.svg');
+    content: url('images/Edit.svg');
   }
 
   .flex > .download:before {
-    content: url('images/download.svg');
+    content: url('images/Download.svg');
   }
 
   .flex > .dPHP:after {
