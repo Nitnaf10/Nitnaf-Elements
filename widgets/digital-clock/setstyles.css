@@ -1,5 +1,7 @@
+/*----- IMPORTATION DE FONTS ------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron&family=Rubik&display=swap');
 
+/*----- VARIABLES ------------------------- */
 :root {
   --bg: #f9f9f9;
   --txt: #333;
@@ -11,6 +13,7 @@
   --blue-hover: #1a6fe0;
 }
 
+/*----- STYLES GÉNÉRAUX ------------------------- */
 body {
   font-family: Arial, sans-serif;
   background-color: var(--bg);
@@ -24,6 +27,7 @@ h1 {
   margin-bottom: 1rem;
 }
 
+/*----- FORMULAIRES ------------------------- */
 form,
 input[type="url"] {
   background: var(--white);
@@ -38,24 +42,26 @@ label {
   display: block;
 }
 
+/*----- CHAMPS DE SAISIE ------------------------- */
 input {
   padding: 0.3rem 0.5rem;
   margin: 0.2rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-
-  &[type="checkbox"] {
-    height: 1em;
-  }
-
-  &:focus {
-    border-color: var(--blue);
-    box-shadow: 0 0 5px var(--blue);
-    outline: none;
-  }
 }
 
+input[type="checkbox"] {
+  height: 1em;
+}
+
+input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 5px var(--blue);
+  outline: none;
+}
+
+/*----- BOUTONS ------------------------- */
 .button-container {
   margin-top: 1rem;
 }
@@ -69,18 +75,20 @@ button {
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: var(--blue-hover);
-  }
 }
 
+button:hover {
+  background-color: var(--blue-hover);
+}
+
+/*----- IFRAME ------------------------- */
 iframe {
   margin-top: 1rem;
   border-radius: var(--radius);
   border: 1px solid #ccc;
 }
 
+/*----- CLOCK ------------------------- */
 .clock {
   border-radius: var(--border-radius, 0);
   border: var(--border, none);
@@ -93,40 +101,46 @@ iframe {
   text-align: center;
 }
 
+/*----- FLEX ------------------------- */
 .flex {
   display: flex;
   flex-wrap: nowrap;
   width: 100%;
-
-  > div {
-    max-width: 20cm;
-  }
-
-  > div,
-  > iframe {
-    flex: auto;
-  }
 }
 
+.flex > div {
+  max-width: 20cm;
+}
+
+.flex > div,
+.flex > iframe {
+  flex: auto;
+}
+
+/*----- GRILLE RÉACTIVE ------------------------- */
 .responsive-grid {
   display: grid;
   gap: 1rem;
+}
 
-  @media (min-width: 35cm) {
+@media (min-width: 35cm) {
+  .responsive-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/*----- CHECK CARD ------------------------- */
 .check-card {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-
-  > * {
-    flex: 1;
-  }
 }
 
+.check-card > * {
+  flex: 1;
+}
+
+/*----- CARD ------------------------- */
 .card > div {
   flex-wrap: wrap;
 }
@@ -143,12 +157,14 @@ iframe {
   max-width: 100%;
 }
 
+/*----- MEDIA QUERIES ------------------------- */
 @media (max-width: 20cm) {
   .flex {
     flex-wrap: wrap-reverse;
-    >iframe{
-      height: 40vh;
-      width: 100vw;
-    }
+  }
+
+  .flex > iframe {
+    height: 40vh;
+    width: 100vw;
   }
 }
