@@ -1,4 +1,7 @@
+/*----- Importation des polices --------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@200..1000&display=swap');
+
+/*----- Style global du body ----------------------------------*/
 body {
   font-family: sans-serif;
   margin: 0;
@@ -8,61 +11,9 @@ body {
   overflow-x: hidden;
 }
 
+/*----- En-tête (Header) --------------------------------------*/
 header {
   background-color: #181823;
-}
-
-#menu {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-#menu > * {
-  padding: 10px;
-  padding-bottom: 0px;
-  flex: 1;
-  text-align: center;
-  font-family: "Cairo", sans-serif;
-  text-decoration: none;
-  font-size: 1.2em;
-  color: white;
-  flex: 1;
-}
-
-#menu > a{
-  position: relative;
-}
-
-#menu > a:after{
-  transition: 0.4s ease;
-  content: "";
-  background-color: #fff;
-  display: block;
-  width: 50%;
-  height: 2px;
-  transform: translate(0) scaleX(0);
-} 
-
-#menu > a:hover:after{
-  transform: translate(50%) scaleX(1);
-}
-
-
-#menu > a:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.2);
-  transform: scaleX(0);
-  transition: 0.3s ease;
-}
-
-#menu > a:hover:before {
-  transform: scaleX(1)
 }
 
 header h1 {
@@ -78,10 +29,63 @@ header h1 {
   background-repeat: no-repeat;
 }
 
+/*----- Menu de navigation -------------------------------------*/
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#menu > * {
+  padding: 10px 10px 0 10px;
+  flex: 1;
+  text-align: center;
+  font-family: "Cairo", sans-serif;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: white;
+}
+
+#menu > a {
+  position: relative;
+}
+
+#menu > a:after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 2px;
+  background-color: #fff;
+  transform: translate(0) scaleX(0);
+  transition: 0.4s ease;
+}
+
+#menu > a:hover:after {
+  transform: translate(50%) scaleX(1);
+}
+
+#menu > a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scaleX(0);
+  transition: 0.3s ease;
+}
+
+#menu > a:hover:before {
+  transform: scaleX(1);
+}
+
+/*----- Contenu principal --------------------------------------*/
 main {
   margin: 1em;
 }
 
+/*----- Widgets ------------------------------------------------*/
 #widgetContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -97,102 +101,108 @@ main {
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
   flex-wrap: wrap-reverse;
-
-  > * {
-    flex: 1;
-  }
-
-  h2 {
-    margin-top: 0;
-  }
-
-  p.short {
-    font-weight: bold;
-  }
-
-  a {
-    margin-top: 10px;
-    background: #7cbcdb;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 4px;
-    text-decoration: none;
-  }
-
-  iframe {
-    width: 8cm;
-    border: none;
-  }
 }
 
+.widget > * {
+  flex: 1;
+}
+
+.widget h2 {
+  margin-top: 0;
+}
+
+.widget p.short {
+  font-weight: bold;
+}
+
+.widget a {
+  margin-top: 10px;
+  background: #7cbcdb;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.widget iframe {
+  width: 8cm;
+  border: none;
+}
+
+/*----- Flex layout pour tags/badges ---------------------------*/
 .flex {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 10px;
-
-  > p {
-    border-radius: 5em;
-    padding: 0.5rem;
-    background-color: lightgrey;
-    margin: 0;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    transition: 1s font-size ease-in-out;
-    transition: 0.2s transform ease-in-out;
-    justify-content: center;
-
-    &:hover {
-      transform: scale(1.5);
-    }
-
-    &:before {
-      display: block;
-      margin-right: 0.5em;
-    }
-  }
-
-  > .download {
-    transition: 1s ease-in-out;
-  }
 }
 
-// Nouvelle section preview
+.flex > p {
+  border-radius: 5em;
+  padding: 0.5rem;
+  background-color: lightgrey;
+  margin: 0;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s transform ease-in-out;
+}
+
+.flex > p:hover {
+  transform: scale(1.5);
+}
+
+.flex > p:before {
+  display: block;
+  margin-right: 0.5em;
+}
+
+.flex > .download {
+  transition: 1s ease-in-out;
+}
+
+/*----- Zone d’aperçu (Preview) -------------------------------*/
 #preview {
   background: #fff;
   margin: 1rem;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 0 4px rgba(0,0,0,0.05);
-
-  #previewArea {
-    margin-top: 1rem;
-    border: 1px dashed #ccc;
-    padding: 1rem;
-    min-height: 200px;
-    background: #fafafa;
-    text-align: center;
-  }
 }
 
-// Footer
+#preview #previewArea {
+  margin-top: 1rem;
+  border: 1px dashed #ccc;
+  padding: 1rem;
+  min-height: 200px;
+  background: #fafafa;
+  text-align: center;
+}
+
+/*----- Pied de page (Footer) ----------------------------------*/
 footer {
   background: #222;
   color: #ddd;
   padding: 1em;
   text-align: center;
-
-  a {
-    color: #7cbcdb;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+  font-family: "Cairo", sans-serif;
+  margin-top: 1em;
+  padding: 20px 20px 30px 20px;
+  background-color: #40a040ff;
+  width: 100vw;
 }
 
+footer a {
+  color: #7cbcdb;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/*----- Media Queries pour responsive --------------------------*/
 @media (max-width: 16.60cm) {
   .flex > p {
     font-size: 0;
@@ -221,15 +231,4 @@ footer {
   .flex {
     justify-content: space-between;
   }
-}
-
-footer {
-  margin: 0;
-  font-family: "Cairo", sans-serif;
-  margin-top: 1em;
-  padding: 20px;
-  color: white;
-  background-color: #40a040ff;
-  width: 100vw;
-  padding-bottom: 30px;
 }
