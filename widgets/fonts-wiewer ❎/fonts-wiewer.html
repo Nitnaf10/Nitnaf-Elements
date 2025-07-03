@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Font Viewer</title>
+  <style>
+body {
+	font-family: Arial, sans-serif;
+	margin: 20px;
+}
+.font-container{
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(4, 1fr);
+}
+.font-sample {
+	margin: 10px 0;
+	padding: 10px;
+	border: 1px solid #ccc;
+	font-size: 3em;
+}
+  </style>
+</head>
+<body>
+  <h1>Aperçu des polices</h1>
+  <div id="font-container"></div>
+  <script src="../data.js"></script>
+  <script>
+    function importGoogleFont(font) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(font)}&display=swap`;
+      document.head.appendChild(link);
+    }
+
+    function showFonts(fonts) {
+      const container = document.getElementById('font-container');
+      container.innerHTML = ''; 
+
+      fonts.forEach(font => {
+        importGoogleFont(font);
+
+        const div = document.createElement('div');
+        div.className = 'font-sample';
+        div.style.fontFamily = `'${font}', sans-serif`;
+        div.textContent = `${font}`;
+
+        container.appendChild(div);
+      });
+    }
+
+    // Attend que fontsList soit remplie
+    document.addEventListener('DOMContentLoaded', () => {
+      const checkInterval = setInterval(() => {
+        if (Array.isArray(fontsList) && fontsList.length > 0) {
+          clearInterval(checkInterval);
+          showFonts(fontsList);
+        }
+      }, 1000); 
+    });
+  </script>
+</body>
+</html>

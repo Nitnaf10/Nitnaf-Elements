@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@200..1000&display=swap');
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: #181823;
+}
+
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#menu > * {
+  padding: 10px;
+  padding-bottom: 0px;
+  flex: 1;
+  text-align: center;
+  font-family: "Cairo", sans-serif;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: white;
+  flex: 1;
+}
+
+#menu > a{
+  position: relative;
+}
+
+#menu > a:after{
+  transition: 0.4s ease;
+  content: "";
+  background-color: #fff;
+  display: block;
+  width: 50%;
+  height: 2px;
+  transform: translate(0) scaleX(0);
+} 
+
+#menu > a:hover:after{
+  transform: translate(50%) scaleX(1);
+}
+
+
+#menu > a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scaleX(0);
+  transition: 0.3s ease;
+}
+
+#menu > a:hover:before {
+  transform: scaleX(1)
+}
+
+header h1 {
+  font-family: "Arvo", serif;
+  text-align: right;
+  color: white;
+  font-size: 5vw;
+  margin: 20px 0;
+  padding-left: 25vw;
+  padding: 5vw;
+  background-image: url(images/background.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+main {
+  margin: 1em;
+}
+
+#widgetContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.widget {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  flex-wrap: wrap-reverse;
+
+  > * {
+    flex: 1;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  p.short {
+    font-weight: bold;
+  }
+
+  a {
+    margin-top: 10px;
+    background: #7cbcdb;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  iframe {
+    width: 8cm;
+    border: none;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 10px;
+
+  > p {
+    border-radius: 5em;
+    padding: 0.5rem;
+    background-color: lightgrey;
+    margin: 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transition: 1s font-size ease-in-out;
+    transition: 0.2s transform ease-in-out;
+    justify-content: center;
+
+    &:hover {
+      transform: scale(1.5);
+    }
+
+    &:before {
+      display: block;
+      margin-right: 0.5em;
+    }
+  }
+
+  > .download {
+    transition: 1s ease-in-out;
+  }
+}
+
+// Nouvelle section preview
+#preview {
+  background: #fff;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.05);
+
+  #previewArea {
+    margin-top: 1rem;
+    border: 1px dashed #ccc;
+    padding: 1rem;
+    min-height: 200px;
+    background: #fafafa;
+    text-align: center;
+  }
+}
+
+// Footer
+footer {
+  background: #222;
+  color: #ddd;
+  padding: 1em;
+  text-align: center;
+
+  a {
+    color: #7cbcdb;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 16.60cm) {
+  .flex > p {
+    font-size: 0;
+  }
+
+  .flex > .edit {
+    content: url('images/edit.svg');
+  }
+
+  .flex > .download:before {
+    content: url('images/download.svg');
+  }
+
+  .flex > .dPHP:after {
+    content: url('images/PHP.svg');
+  }
+
+  .flex > .dHTML:after {
+    content: url('images/HTML.svg');
+  }
+
+  .flex > .download {
+    font-size: 0;
+  }
+
+  .flex {
+    justify-content: space-between;
+  }
+}
+
+footer {
+  margin: 0;
+  font-family: "Cairo", sans-serif;
+  margin-top: 1em;
+  padding: 20px;
+  color: white;
+  background-color: #40a040ff;
+  width: 100vw;
+  padding-bottom: 30px;
+}
