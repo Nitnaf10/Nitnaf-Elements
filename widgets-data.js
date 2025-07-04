@@ -21,7 +21,7 @@ const widgets = [
 		"CSS"
      ],
     params: "padding-top=0px&padding-right=0px&padding-bottom=0px&padding-left=0px&"
-  }
+  },
   {
     name: "Analog Clock",
     short: "Customizable stylish anaog clock",
