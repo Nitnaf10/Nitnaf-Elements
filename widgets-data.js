@@ -56,8 +56,8 @@ const elements = [
   'Display',
   'Font',
   'Italic',
+  'Padding',
   'Size',
-  'Padding'
 ];
 
 const CodeLanguages = [
