@@ -42,7 +42,8 @@ const widgets = [{
       "JS",
       "CSS"
     ],
-    params: "size=100px&font-size=0.5em"
+    params: "size=100&border-color=green&background-color=lightgreen&hour-show=1&minute-show=1&second-show=1
+m"
   }
 ];
 const elements = [
