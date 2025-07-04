@@ -2,9 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Horloge JS</title>
+  <title>Digital Colock 1 (JS)</title>
   <script>
-    // Récupérer les paramètres GET de l'URL
     const urlParams = new URLSearchParams(window.location.search);
 
     const getParam = (key, def = '') => urlParams.get(key) || def;
@@ -24,13 +23,11 @@
       paddingLeft: getParam('padding-left', '50px')
     };
 
-    // Charger dynamiquement la police Google Fonts
     const fontLink = document.createElement('link');
     fontLink.rel = 'stylesheet';
     fontLink.href = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(styleConfig.fontFamily)}&display=swap`;
     document.head.appendChild(fontLink);
 
-    // Appliquer dynamiquement les styles une fois le DOM chargé
     window.addEventListener('DOMContentLoaded', () => {
       const clock = document.getElementById('clock');
 
@@ -54,7 +51,6 @@
       document.body.style.background = 'transparent';
     });
 
-    // Mettre à jour l'heure
     function updateClock() {
       const now = new Date();
       const clockText = document.getElementById('clocktext');

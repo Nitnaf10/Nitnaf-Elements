@@ -1,6 +1,6 @@
 <?php
 
-// Polices système (classiques des navigateurs)
+// System fonts (common browser fonts)
 $systemFonts = [
     "Arial",
     "Verdana",
@@ -17,7 +17,7 @@ $systemFonts = [
     "Impact"
 ];
 
-// Polices Google Fonts (via API)
+// Google Fonts (via API)
 $apiKey = 'AIzaSyCeuNt8nTwEs1_-TNA6AV0HEt2esWDVnVI';
 $url = "https://www.googleapis.com/webfonts/v1/webfonts?key=$apiKey";
 $fonts = $systemFonts; 
@@ -31,7 +31,7 @@ if ($response !== false) {
     }
 }
 
-// --- Liste des couleurs CSS standard ---
+// --- List of standard CSS colors ---
 $cssColors = [
     "aliceblue", "antiquewhite", "aqua", "aquamarine", "azure", "beige", "bisque", "black", "blanchedalmond", "blue",
     "blueviolet", "brown", "burlywood", "cadetblue", "chartreuse", "chocolate", "coral", "cornflowerblue", "cornsilk",
@@ -53,10 +53,10 @@ $cssColors = [
     "yellowgreen"
 ];
 
-// --- Unitées de mesures de base---
-$cssUnits = ['px','em','rem','%','vh','vw','pt','cm','mm','in','ex','cap','ch','ic'];
+// --- Basic measurement units ---
+$cssUnits = ['em', 'ex', 'cap', 'ch', 'ic', 'rem', 'lh', 'rlh', 'vw', 'vh', 'vi', 'vb', 'vmin', 'vmax', 'cm', 'mm', 'Q', 'in', 'pc', 'pt', 'px', 'deg', 'grad', 'rad', 'turn', 's', 'ms', 'Hz', 'kHz', 'dpi', 'dpcm', 'dppx', 'x'];
 
-// --- styles de border---
+// --- Border styles ---
 $borderStyles = ['none','solid','dashed','dotted','double','groove','ridge','inset','outset','hidden'];
 
 ?>

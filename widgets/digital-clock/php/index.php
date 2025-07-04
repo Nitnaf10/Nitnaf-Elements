@@ -20,7 +20,7 @@ $padding_left   = $_GET['padding-left'] ?? '50px';
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
-<title>Horloge PHP</title>
+<title>Digital Clock 1 (PHP)</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=<?= rawurlencode($font) ?>&display=swap');
 

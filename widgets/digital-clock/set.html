@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Générateur d'Horloge (JS)</title>
-  <link rel="stylesheet" href="styles.scss" />
+  <title>Digital Clock 1 Generator (JS)</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Générateur d'Horloge</h1>
+  <h1>Digital Clock 1 Generator (JS)</h1>
   <div class="flex">
 	<div>
 		<form id="clockForm">
 		<div class="responsive-grid">
-		  <!-- Rayon de bordure -->
+		  <!-- Border Radius -->
 		  <div class="card">
-			<label for="border_radius">Rayon de bordure :</label>
+			<label for="border_radius">Border Radius:</label>
 			<div>
 			  <input value="0" min="0" type="number" id="border_radius" name="border_radius" />
 			  <input value="px" list="units" name="border_radius_unit" style="flex: 0.5" />
 			</div>
 		  </div>
 
-		  <!-- Couleur -->
+		  <!-- Color -->
 		  <div class="card">
-			<label for="color">Couleur :</label>
+			<label for="color">Color:</label>
 			<div>
 			  <input value="black" list="colors" id="color" name="color" />
 			</div>
 		  </div>
 
-		  <!-- Bordure complète -->
+		  <!-- Full Border -->
 		  <div class="card">
-			<label for="border_width">Bordure :</label>
+			<label for="border_width">Border:</label>
 			<div>
 			  <input value="0" min="0" type="number" id="border_width" name="border_width" />
 			  <input value="px" list="units" name="border_unit" style="flex: 0.5" />
@@ -39,83 +39,83 @@
 			</div>
 		  </div>
 
-		  <!-- Police -->
+		  <!-- Font -->
 		  <div class="card">
-			<label for="font">Police :</label>
+			<label for="font">Font:</label>
 			<div>
 			  <input value="Monoton" list="fonts" id="font" name="font" />
 			  <input value="5" min="0" type="number" id="font_size" name="font_size" />
 			  <input value="rem" list="units" id="font_size_unit" name="font_size_unit" style="flex: 0.5" />
-		      <label for="background_color">Couleur de fond :</label>
+		      <label for="background_color">Background Color:</label>
 		      <input value="transparent"  list="colors" id="background_color" name="background_color" />
 			</div>
 		  </div>
 
-		  <!-- Gras -->
+		  <!-- Bold -->
 		  <div class="card">
-			<label for="font_weight">Gras :</label>
+			<label for="font_weight">Bold:</label>
 			<div>
 			  <input value="200"  type="number" id="font_weight" name="font_weight" min="100" max="900" step="100" />
 			</div>
 		  </div>
 
-		  <!-- Oblique -->
+		  <!-- Italic -->
 		  <div class="card">
-			<label for="font_style">Inclinaison (oblique) :</label>
+			<label for="font_style">Tilt (italic):</label>
 			<div>
 			  <input value="0" type="number" id="font_style" name="font_style" min="-90" max="90" />
 			</div>
 		  </div>
 
-		  <!-- Padding haut -->
+		  <!-- Top Padding -->
 		  <div class="card">
-			<label for="padding_top">Padding haut :</label>
+			<label for="padding_top">Top Padding:</label>
 			<div>
 			  <input value="30"  min="0" type="number" id="padding_top" name="padding_top" />
 			  <input value="px"  list="units" name="padding_top_unit" style="flex: 0.5" />
 			</div>
 		  </div>
 
-		  <!-- Padding droite -->
+		  <!-- Right Padding -->
 		  <div class="card">
-			<label for="padding_right">Padding droite :</label>
+			<label for="padding_right">Right Padding:</label>
 			<div>
 			  <input value="50" min="0" type="number" id="padding_right" name="padding_right" />
 			  <input value="px" list="units" name="padding_right_unit" style="flex: 0.5" />
 			</div>
 		  </div>
 
-		  <!-- Padding bas -->
+		  <!-- Bottom Padding -->
 		  <div class="card">
-			<label for="padding_bottom">Padding bas :</label>
+			<label for="padding_bottom">Bottom Padding:</label>
 			<div>
 			  <input value="30" min="0" type="number" id="padding_bottom" name="padding_bottom" />
 			  <input value="px" list="units" name="padding_bottom_unit" style="flex: 0.5" />
 			</div>
 		  </div>
 
-		  <!-- Padding gauche -->
+		  <!-- Left Padding -->
 		  <div class="card">
-			<label for="padding_left">Padding gauche :</label>
+			<label for="padding_left">Left Padding:</label>
 			<div>
 			  <input value="50" min="0" type="number" id="padding_left" name="padding_left" />
-			  <input value="px" list="units" name="padding_left_unit" style="flex: 0.5" />
+			  <input value="px" list="units" name="padding_left_unit" style="flex:0.5" />
 			</div>
 		  </div>
 
-		  <!-- Affichage des composants de l'heure -->
+		  <!-- Display Time Components -->
 		  <div class="card check-card">
-			<label for="hours">Heures :</label>
+			<label for="hours">Hours:</label>
 			<input type="checkbox" id="hours" name="hours" value="true" checked/>
 		  </div>
 
 		  <div class="card check-card">
-			<label for="minutes">Minutes :</label>
+			<label for="minutes">Minutes:</label>
 			<input type="checkbox" id="minutes" name="minutes" value="true" checked />
 		  </div>
 
 		  <div class="card check-card">
-			<label for="second">Secondes :</label>
+			<label for="second">Seconds:</label>
 			<input type="checkbox" id="second" name="second" value="true" />
 		  </div>
 		</div>
@@ -126,12 +126,11 @@
 		<datalist id="units"></datalist>
 		<datalist id="border_styles"></datalist>
 
-
         <div class="button-container">
-          <button type="submit">Générer l'Horloge</button>
+          <button type="submit">Generate Clock</button>
         </div>
       </form>
-		<label for="url">Lien de la ressource :</label>
+		<label for="url">Resource Link:</label>
         <input id="url" type="url" readonly />
     </div>
     <iframe id="clockFrame" style="border:none; width:100%; height:300px;"></iframe>
@@ -191,9 +190,8 @@
 		  inurl(minutes, 'true', 'minute-show') +
 		  inurl(seconds, 'false', 'second-show');
 
-		document.getElementById('url').value = url;
-		document.getElementById('clockFrame').src = `${window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'))}/${url}`;
-		document.getElementById('resultContainer').style.display = 'block';
+		document.getElementById('url').value = `https://nitnaf10.github.io/Nitnaf-Elements/widgets/digital-clock/${url}`;
+		document.getElementById('clockFrame').src = url;
 	  }
 
 	  document.getElementById('clockForm').addEventListener('submit', function(e) {
@@ -201,7 +199,6 @@
 		processFormSubmission(e.target);
 	  });
 
-	  // Appel automatique toutes les secondes
 	  setInterval(() => {
 		const form = document.getElementById('clockForm');
 		if (form) {
@@ -212,7 +209,7 @@
 	  function populateDatalist(id, values) {
 		const datalist = document.getElementById(id);
 		if (!datalist) return;
-		datalist.innerHTML = ''; // Reset
+		datalist.innerHTML = '';
 		values.forEach(value => {
 		  const option = document.createElement('option');
 		  option.value = value;
@@ -229,3 +226,5 @@
   <script src="../data.js"></script>
 </body>
 </html>
+
+
