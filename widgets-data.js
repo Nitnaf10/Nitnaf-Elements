@@ -3,7 +3,7 @@ const widgets = [
     name: "Digital Clock",
     short: "Customizable stylish digital clock",
     "params-text": [
-	  "Background",
+      "Background",
       "Bold",
       "Border",
       "Border Radius",
@@ -34,7 +34,8 @@ const widgets = [
       "Display",
       "Font",
       "Italic",
-      "Padding"
+      "Padding", 
+      "Size"
     ],
     url: "analog clock",
     "languages": [
@@ -55,6 +56,7 @@ const elements = [
   'Display',
   'Font',
   'Italic',
+  'Size',
 ];
 
 const CodeLanguages = [
