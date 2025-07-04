@@ -1,0 +1,170 @@
+/*----- IMPORTATION DE FONTS ------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron&family=Rubik&display=swap');
+
+/*----- VARIABLES ------------------------- */
+:root {
+  --bg: #f9f9f9;
+  --txt: #333;
+  --white: #fff;
+  --shadow: 0 0 10px #ddd;
+  --radius: 8px;
+
+  --blue: #2a8cff;
+  --blue-hover: #1a6fe0;
+}
+
+/*----- STYLES GÉNÉRAUX ------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--txt);
+  padding: 1rem;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+/*----- FORMULAIRES ------------------------- */
+form,
+input[type="url"] {
+  background: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  width: -moz-available;
+}
+
+label {
+  display: block;
+}
+
+/*----- CHAMPS DE SAISIE ------------------------- */
+input {
+  padding: 0.3rem 0.5rem;
+  margin: 0.2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="checkbox"] {
+  height: 1em;
+}
+
+input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 5px var(--blue);
+  outline: none;
+}
+
+/*----- BOUTONS ------------------------- */
+.button-container {
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--blue);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--blue-hover);
+}
+
+/*----- IFRAME ------------------------- */
+iframe {
+  margin-top: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+}
+
+/*----- CLOCK ------------------------- */
+.clock {
+  border-radius: var(--border-radius, 0);
+  border: var(--border, none);
+  color: var(--color, #000);
+  font-family: var(--font, Arial, sans-serif);
+  padding: 1rem;
+  background: var(--white);
+  display: inline-block;
+  user-select: none;
+  text-align: center;
+}
+
+/*----- FLEX ------------------------- */
+.flex {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.flex > div {
+  max-width: 20cm;
+}
+
+.flex > div,
+.flex > iframe {
+  flex: auto;
+}
+
+/*----- GRILLE RÉACTIVE ------------------------- */
+.responsive-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 35cm) {
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*----- CHECK CARD ------------------------- */
+.check-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.check-card > * {
+  flex: 1;
+}
+
+/*----- CARD ------------------------- */
+.card > div {
+  flex-wrap: wrap;
+}
+
+.card div {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.card > div > input {
+  flex: 1 1 auto;
+  min-width: 4rem;
+  max-width: 100%;
+}
+
+/*----- MEDIA QUERIES ------------------------- */
+@media (max-width: 20cm) {
+  .flex {
+    flex-wrap: wrap-reverse;
+  }
+
+  .flex > iframe {
+    height: 40vh;
+    width: 100vw;
+  }
+}

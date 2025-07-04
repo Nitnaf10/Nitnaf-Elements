@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Générateur d'Horloge (JS)</title>
+  <link rel="stylesheet" href="styles.scss" />
+</head>
+<body>
+  <h1>Générateur d'Horloge</h1>
+  <div class="flex">
+	<div>
+		<form id="clockForm">
+		<div class="responsive-grid">
+		  <!-- Rayon de bordure -->
+		  <div class="card">
+			<label for="border_radius">Rayon de bordure :</label>
+			<div>
+			  <input value="0" min="0" type="number" id="border_radius" name="border_radius" />
+			  <input value="px" list="units" name="border_radius_unit" style="flex: 0.5" />
+			</div>
+		  </div>
+
+		  <!-- Couleur -->
+		  <div class="card">
+			<label for="color">Couleur :</label>
+			<div>
+			  <input value="black" list="colors" id="color" name="color" />
+			</div>
+		  </div>
+
+		  <!-- Bordure complète -->
+		  <div class="card">
+			<label for="border_width">Bordure :</label>
+			<div>
+			  <input value="0" min="0" type="number" id="border_width" name="border_width" />
+			  <input value="px" list="units" name="border_unit" style="flex: 0.5" />
+			  <input value="solid" list="border_styles" name="border_style" />
+			  <input value="black" list="colors" id="border_color" name="border_color" />
+			</div>
+		  </div>
+
+		  <!-- Police -->
+		  <div class="card">
+			<label for="font">Police :</label>
+			<div>
+			  <input value="Monoton" list="fonts" id="font" name="font" />
+			  <input value="5" min="0" type="number" id="font_size" name="font_size" />
+			  <input value="rem" list="units" id="font_size_unit" name="font_size_unit" style="flex: 0.5" />
+		      <label for="background_color">Couleur de fond :</label>
+		      <input value="transparent"  list="colors" id="background_color" name="background_color" />
+			</div>
+		  </div>
+
+		  <!-- Gras -->
+		  <div class="card">
+			<label for="font_weight">Gras :</label>
+			<div>
+			  <input value="200"  type="number" id="font_weight" name="font_weight" min="100" max="900" step="100" />
+			</div>
+		  </div>
+
+		  <!-- Oblique -->
+		  <div class="card">
+			<label for="font_style">Inclinaison (oblique) :</label>
+			<div>
+			  <input value="0" type="number" id="font_style" name="font_style" min="-90" max="90" />
+			</div>
+		  </div>
+
+		  <!-- Padding haut -->
+		  <div class="card">
+			<label for="padding_top">Padding haut :</label>
+			<div>
+			  <input value="30"  min="0" type="number" id="padding_top" name="padding_top" />
+			  <input value="px"  list="units" name="padding_top_unit" style="flex: 0.5" />
+			</div>
+		  </div>
+
+		  <!-- Padding droite -->
+		  <div class="card">
+			<label for="padding_right">Padding droite :</label>
+			<div>
+			  <input value="50" min="0" type="number" id="padding_right" name="padding_right" />
+			  <input value="px" list="units" name="padding_right_unit" style="flex: 0.5" />
+			</div>
+		  </div>
+
+		  <!-- Padding bas -->
+		  <div class="card">
+			<label for="padding_bottom">Padding bas :</label>
+			<div>
+			  <input value="30" min="0" type="number" id="padding_bottom" name="padding_bottom" />
+			  <input value="px" list="units" name="padding_bottom_unit" style="flex: 0.5" />
+			</div>
+		  </div>
+
+		  <!-- Padding gauche -->
+		  <div class="card">
+			<label for="padding_left">Padding gauche :</label>
+			<div>
+			  <input value="50" min="0" type="number" id="padding_left" name="padding_left" />
+			  <input value="px" list="units" name="padding_left_unit" style="flex: 0.5" />
+			</div>
+		  </div>
+
+		  <!-- Affichage des composants de l'heure -->
+		  <div class="card check-card">
+			<label for="hours">Heures :</label>
+			<input type="checkbox" id="hours" name="hours" value="true" checked/>
+		  </div>
+
+		  <div class="card check-card">
+			<label for="minutes">Minutes :</label>
+			<input type="checkbox" id="minutes" name="minutes" value="true" checked />
+		  </div>
+
+		  <div class="card check-card">
+			<label for="second">Secondes :</label>
+			<input type="checkbox" id="second" name="second" value="true" />
+		  </div>
+		</div>
+
+        <!-- Datalists -->
+        <datalist id="colors"></datalist>
+		<datalist id="fonts"></datalist>
+		<datalist id="units"></datalist>
+		<datalist id="border_styles"></datalist>
+
+
+        <div class="button-container">
+          <button type="submit">Générer l'Horloge</button>
+        </div>
+      </form>
+		<label for="url">Lien de la ressource :</label>
+        <input id="url" type="url" readonly />
+    </div>
+    <iframe id="clockFrame" style="border:none; width:100%; height:300px;"></iframe>
+  </div>
+	<script>
+	  function val(formData, key, defVal) {
+		const v = formData.get(key);
+		return (v !== null && v !== '') ? v : defVal;
+	  }
+
+	  function inurl(val, def, name) {
+		return val !== def ? `${name}=${encodeURIComponent(val)}&` : '';
+	  }
+
+	  function processFormSubmission(formElement) {
+		const formData = new FormData(formElement);
+
+		const color = val(formData, 'color', 'black');
+		const bRadius = val(formData, 'border_radius', '0');
+		const bRadiusUnit = val(formData, 'border_radius_unit', 'px');
+		const bWidth = val(formData, 'border_width', '0');
+		const bUnit = val(formData, 'border_unit', 'px');
+		const bStyle = val(formData, 'border_style', 'solid');
+		const bColor = val(formData, 'border_color', 'black');
+		const font = val(formData, 'font', 'Monoton');
+		const fontSize = val(formData, 'font_size', '5');
+		const fontSizeUnit = val(formData, 'font_size_unit', 'rem');
+		const padTop = val(formData, 'padding_top', '30');
+		const padTopUnit = val(formData, 'padding_top_unit', 'px');
+		const padBottom = val(formData, 'padding_bottom', '30');
+		const padBottomUnit = val(formData, 'padding_bottom_unit', 'px');
+		const padRight = val(formData, 'padding_right', '50');
+		const padRightUnit = val(formData, 'padding_right_unit', 'px');
+		const padLeft = val(formData, 'padding_left', '50');
+		const padLeftUnit = val(formData, 'padding_left_unit', 'px');
+		const hours = formData.get('hours') === 'true' ? 'true' : 'false';
+		const minutes = formData.get('minutes') === 'true' ? 'true' : 'false';
+		const seconds = formData.get('second') === 'true' ? 'true' : 'false';
+		const fWeight = val(formData, 'font_weight', '200');
+		const fStyle = val(formData, 'font_style', '0');
+		const bgColor = val(formData, 'background_color', 'transparent');
+
+		let url = 'index.html?' +
+		  inurl(color, 'black', 'color') +
+		  inurl(bRadius + bRadiusUnit, '0px', 'border-radius') +
+		  inurl(bWidth + bUnit + ' ' + bStyle + ' ' + bColor, '0px solid black', 'border') +
+		  inurl(font, 'Monoton', 'font-family') +
+		  inurl(fWeight, '200', 'f-weight') +
+		  inurl(fStyle, '0', 'font-style') +
+		  inurl(fontSize + fontSizeUnit, '5rem', 'font-size') +
+		  inurl(padTop + padTopUnit, '30px', 'padding-top') +
+		  inurl(padRight + padRightUnit, '50px', 'padding-right') +
+		  inurl(padBottom + padBottomUnit, '30px', 'padding-bottom') +
+		  inurl(padLeft + padLeftUnit, '50px', 'padding-left') +
+		  inurl(bgColor, 'transparent', 'background-color') +
+		  inurl(hours, 'true', 'hour-show') +
+		  inurl(minutes, 'true', 'minute-show') +
+		  inurl(seconds, 'false', 'second-show');
+
+		document.getElementById('url').value = url;
+		document.getElementById('clockFrame').src = `${window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'))}/${url}`;
+		document.getElementById('resultContainer').style.display = 'block';
+	  }
+
+	  document.getElementById('clockForm').addEventListener('submit', function(e) {
+		e.preventDefault();
+		processFormSubmission(e.target);
+	  });
+
+	  // Appel automatique toutes les secondes
+	  setInterval(() => {
+		const form = document.getElementById('clockForm');
+		if (form) {
+		  processFormSubmission(form);
+		}
+	  }, 1000);
+
+	  function populateDatalist(id, values) {
+		const datalist = document.getElementById(id);
+		if (!datalist) return;
+		datalist.innerHTML = ''; // Reset
+		values.forEach(value => {
+		  const option = document.createElement('option');
+		  option.value = value;
+		  datalist.appendChild(option);
+		});
+	  }
+
+	  window.addEventListener('DOMContentLoaded', () => {
+		populateDatalist('colors', cssColors);
+		populateDatalist('units', cssUnits);
+		populateDatalist('border_styles', borderStyles);
+	  });
+	</script>
+  <script src="../data.js"></script>
+</body>
+</html>
