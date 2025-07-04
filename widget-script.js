@@ -24,12 +24,22 @@ const generateLanguagesHTML = (languages) => {
   }).join('');
 };
 
+// Fonction pour vérifier la présence de fichiers SASS
+const containsSass = (widget) => {
+  return widget.files && (widget.files.includes('.scss') || widget.files.includes('.sass'));
+};
+
 widgets.forEach(widget => {
   const div = document.createElement('div');
   div.className = 'widget';
 
   const paramsHTML = generateParamsHTML(widget["params-text"]);
   const languagesHTML = generateLanguagesHTML(widget["languages"]);
+
+  let cssDownloadButton = '';
+  if (containsSass(widget)) {
+    cssDownloadButton = `<a class="download dCSS" href="widgets/${widget.url}/styles.css" download>Download the CSS stylesheet</a>`;
+  }
 
   div.innerHTML = `
     <div>
@@ -41,6 +51,7 @@ widgets.forEach(widget => {
         <a class="edit" href="widgets/${widget.url}/set.html" target="_blank">Edit widget</a>
         <a class="download dHTML" href="widgets/${widget.url}/${widget.name} Html.zip" download>Download the project in HTML</a>
         <a class="download dPHP" href="widgets/${widget.url}/${widget.name} Php.zip" download>Download the project in PHP</a>
+        ${cssDownloadButton} 
       </div>
     </div>
     <iframe style="border:none;" src="widgets/${widget.url}/index.html?${widget.params}"></iframe>
