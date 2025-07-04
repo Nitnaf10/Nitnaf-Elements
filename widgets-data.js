@@ -1,5 +1,4 @@
-const widgets = [
-  {
+const widgets = [{
     name: "Digital Clock",
     short: "Customizable stylish digital clock",
     "params-text": [
@@ -15,11 +14,11 @@ const widgets = [
     ],
     url: "digital-clock",
     "languages": [
-		"PHP",
-		"HTML",
-		"JS",
-		"CSS"
-     ],
+      "PHP",
+      "HTML",
+      "JS",
+      "CSS"
+    ],
     params: "padding-top=0px&padding-right=0px&padding-bottom=0px&padding-left=0px"
   },
   {
@@ -34,19 +33,18 @@ const widgets = [
       "Display",
       "Font",
       "Italic",
-      "Padding", 
+      "Padding",
       "Size"
     ],
     url: "analog-clock",
     "languages": [
-		"PHP",
-		"JS",
-		"CSS"
+      "PHP",
+      "JS",
+      "CSS"
     ],
     params: "size=100px&font-size=0.5em"
   }
 ];
-
 const elements = [
   'Background',
   'Bold',
@@ -59,11 +57,10 @@ const elements = [
   'Padding',
   'Size',
 ];
-
 const CodeLanguages = [
-	"JS",
-	"PHP",
-	"HTML",
-	"CSS",
-	"SASS"
+  "JS",
+  "PHP",
+  "HTML",
+  "CSS",
+  "SASS"
 ]
