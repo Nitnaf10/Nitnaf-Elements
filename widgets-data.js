@@ -36,7 +36,7 @@ const widgets = [
       "Italic",
       "Padding"
     ],
-    url: "",
+    url: "analog clock",
     "languages": [
 		"PHP",
 		"JS",
