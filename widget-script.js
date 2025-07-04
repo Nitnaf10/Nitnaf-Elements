@@ -38,7 +38,7 @@ widgets.forEach(widget => {
 
   let cssDownloadButton = '';
   if (containsSass(widget)) {
-    cssDownloadButton = `<a class="download dCSS" href="widgets/${widget.url}/styles.css" download>Download the CSS stylesheet</a>`;
+    cssDownloadButton = `<a class="download dCSS" href="widgets/${widget.url}/${widget.name} Css.zip" download>Download the project's css</a>`;
   }
 
   div.innerHTML = `
