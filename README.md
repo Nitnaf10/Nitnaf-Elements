@@ -1,30 +1,31 @@
+
 # Nitnaf Elements
 
-Nitnaf Elements est une collection de composants web modulaires et personnalisables, conçus pour être intégrés facilement dans vos projets. Chaque widget est léger, stylisable et peut être configuré via des paramètres d'URL, offrant ainsi une flexibilité maximale pour les développeurs.
+Nitnaf Elements is a collection of modular and customizable web components designed for easy integration into your projects. Each widget is lightweight, stylable, and can be configured through URL parameters, offering maximum flexibility for developers.
 
 ## Description
 
-Nitnaf Elements propose une galerie de widgets web qui peuvent être utilisés pour enrichir vos applications et sites web. Chaque widget est conçu pour être facilement personnalisable, permettant aux utilisateurs de modifier les paramètres directement via l'URL.
+Nitnaf Elements provides a gallery of web widgets that can be used to enhance your applications and websites. Each widget is designed to be easily customizable, allowing users to modify parameters directly via the URL.
 
-## Fonctionnalités
+## Features
 
-- **Widgets modulaires** : Intégrez facilement des composants dans vos projets.
-- **Personnalisation via URL** : Modifiez les paramètres des widgets directement dans l'URL.
-- **Compatibilité** : Fonctionne sur tous les navigateurs modernes.
-- **Documentation** : Chaque widget est accompagné d'une documentation pour faciliter son utilisation.
+-   **Modular Widgets**: Easily integrate components into your projects.
+-   **URL Customization**: Change widget parameters directly in the URL.
+-   **Compatibility**: Works on all modern browsers.
+-   **Documentation**: Each widget comes with documentation to facilitate its use.
 
 ## Nitnaf Element
 
-Pour explorer les widgets en ligne, visitez le site [Nitnaf Elements](https://nitnaf10.github.io/Nitnaf-Elements/). Vous y trouverez une présentation interactive de tous les widgets disponibles.
+To explore the widgets online, visit the [Nitnaf Elements](https://nitnaf10.github.io/Nitnaf-Elements/) website. You will find an interactive presentation of all available widgets.
 
-## Licence
+## License
 
-Ce projet est sous la licence MIT. Pour plus de détails, veuillez consulter le fichier [MIT.html](MIT.html).
+This project is licensed under the MIT License. For more details, please refer to the [MIT.html](https://duckduckgo.com/MIT.html) file.
 
 ## Contact
 
-Pour toute question ou suggestion, n'hésitez pas à me contacter :
+For any questions or suggestions, feel free to reach out to me:
 
-- **GitHub**: [Nitnaf10](https://github.com/Nitnaf10)
-- **Discord**: [Nitnaf's Tools](https://discord.gg/XVyHTVMwU4)
-- **Portofolio**: [Nitnaf's Portofolio](https://nitnaf10.github.io/Portofolio/)
+-   **GitHub**: [Nitnaf10](https://github.com/Nitnaf10)
+-   **Discord**: [Nitnaf's Tools](https://discord.gg/XVyHTVMwU4)
+-   **Portfolio**: [Nitnaf's Portfolio](https://nitnaf10.github.io/Portofolio/)
