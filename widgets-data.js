@@ -14,13 +14,35 @@ const widgets = [
       "Padding"
     ],
     url: "digital-clock",
-	"languages": [
+    "languages": [
 		"PHP",
 		"HTML",
 		"JS",
 		"CSS"
-	],
+     ],
     params: "padding-top=0px&padding-right=0px&padding-bottom=0px&padding-left=0px&"
+  }
+  {
+    name: "Analog Clock",
+    short: "Customizable stylish anaog clock",
+    "params-text": [
+      "Background",
+      "Bold",
+      "Border",
+      "Border Radius",
+      "Color",
+      "Display",
+      "Font",
+      "Italic",
+      "Padding"
+    ],
+    url: "",
+    "languages": [
+		"PHP",
+		"JS",
+		"CSS"
+    ],
+    params: ""
   }
 ];
 
@@ -33,7 +55,6 @@ const elements = [
   'Display',
   'Font',
   'Italic',
-  'Padding'
 ];
 
 const CodeLanguages = [
