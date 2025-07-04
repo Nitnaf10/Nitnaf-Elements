@@ -42,8 +42,7 @@ const widgets = [{
       "JS",
       "CSS"
     ],
-    params: "size=100&border-color=green&background-color=lightgreen&hour-show=1&minute-show=1&second-show=1
-m"
+    params: "http://votre-site.com/horloge.html?size=100&border-color=green&background-color=lightgreen&hour-show=1&minute-show=1&second-show=1&num-color=darkgreen&num-size=1.5rem&show-small=0"
   }
 ];
 const elements = [
