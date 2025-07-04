@@ -20,7 +20,7 @@ const widgets = [
 		"JS",
 		"CSS"
      ],
-    params: "padding-top=0px&padding-right=0px&padding-bottom=0px&padding-left=0px&"
+    params: "padding-top=0px&padding-right=0px&padding-bottom=0px&padding-left=0px"
   },
   {
     name: "Analog Clock",
@@ -43,7 +43,7 @@ const widgets = [
 		"JS",
 		"CSS"
     ],
-    params: "size=100px"
+    params: "size=100px&font-size=0.5em"
   }
 ];
 
