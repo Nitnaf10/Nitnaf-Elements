@@ -43,7 +43,7 @@ const widgets = [
 		"JS",
 		"CSS"
     ],
-    params: ""
+    params: "size=100px"
   }
 ];
 
