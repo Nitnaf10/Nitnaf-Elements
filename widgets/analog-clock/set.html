@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Générateur d’Horloge Analogique</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Générateur d’Horloge Analogique</h1>
+  <div class="flex">
+    <div>
+      <form id="clock-form" method="GET">
+        <div class="responsive-grid">
+
+          <!-- Taille de l'horloge -->
+          <div class="card">
+            <label for="size">Taille (px) :</label>
+            <input type="number" name="size" min="100" />
+          </div>
+
+          <!-- Bordures -->
+          <div class="card">
+            <label>Bordure :</label>
+            <input type="number" name="border_width" min="0" />
+            <input list="units" name="border_unit" />
+            <input list="border_styles" name="border_style" />
+            <input list="colors" name="border_color" />
+          </div>
+
+          <!-- Rayon des bords -->
+          <div class="card">
+            <label>Border Radius :</label>
+            <input type="number" name="border_radius" />
+            <input list="units" name="border_radius_unit" />
+          </div>
+
+          <!-- Couleur de fond -->
+          <div class="card">
+            <label for="background_color">Fond :</label>
+            <input list="colors" name="background_color" />
+          </div>
+
+          <!-- Aiguilles -->
+          <fieldset class="card">
+            <legend>Aiguilles</legend>
+            <div>
+              <label>Heures :</label>
+              <input type="checkbox" name="hour_show" value="true" />
+              L: <input type="number" name="hour_length" style="width:60px" />
+              W: <input type="number" name="hour_width" style="width:50px" />
+              R: <input type="number" name="hour_radius" style="width:50px" />
+              C: <input list="colors" name="hour_color" />
+            </div>
+            <div>
+              <label>Minutes :</label>
+              <input type="checkbox" name="minute_show" value="true" />
+              L: <input type="number" name="minute_length" style="width:60px" />
+              W: <input type="number" name="minute_width" style="width:50px" />
+              R: <input type="number" name="minute_radius" style="width:50px" />
+              C: <input list="colors" name="minute_color" />
+            </div>
+            <div>
+              <label>Secondes :</label>
+              <input type="checkbox" name="second_show" value="true" />
+              L: <input type="number" name="second_length" style="width:60px" />
+              W: <input type="number" name="second_width" style="width:50px" />
+              R: <input type="number" name="second_radius" style="width:50px" />
+              C: <input list="colors" name="second_color" />
+            </div>
+          </fieldset>
+
+          <!-- Affichage des nombres -->
+          <div class="card check-card">
+            <label><input type="checkbox" name="show_small" value="true" /> Nombres petits</label>
+            <label><input type="checkbox" name="show_big" value="true" /> Nombres grands</label>
+          </div>
+
+          <!-- Style des nombres -->
+          <div class="card">
+            <label>Nombres (petits):</label>
+            <input list="fonts" name="num_font" />
+            <input type="number" name="num_size" />
+            <input list="units" name="num_unit" />
+            <input list="colors" name="num_color" />
+            <input type="number" name="num_weight" />
+            <input type="number" name="num_oblique" />
+          </div>
+
+          <div class="card">
+            <label>Nombres (grands):</label>
+            <input list="fonts" name="big_font" />
+            <input type="number" name="big_size" />
+            <input list="units" name="big_unit" />
+            <input list="colors" name="big_color" />
+            <input type="text" name="big_weight" />
+            <input type="number" name="big_oblique" />
+          </div>
+
+        </div>
+
+        <!-- Datalists partagées -->
+        <datalist id="colors">
+          <!-- Remplis selon ta data.js -->
+        </datalist>
+        <datalist id="fonts">
+          <!-- Remplis selon ta data.js -->
+        </datalist>
+        <datalist id="units">
+          <!-- Remplis selon ta data.js -->
+        </datalist>
+        <datalist id="border_styles">
+          <!-- Remplis selon ta data.js -->
+        </datalist>
+
+        <div class="button-container">
+          <button type="submit">Générer l'horloge</button>
+        </div>
+      </form>
+
+      <label for="url">Lien de l'horloge :</label>
+      <input id="url" type="url" readonly />
+
+    </div>
+
+    <iframe id="clock-frame" style="width:100%; height:500px; border:none;"></iframe>
+  </div>
+
+  <script>
+    const defaults = {
+      size: '300',
+      border_width: '10',
+      border_unit: 'px',
+      border_style: 'solid',
+      border_color: '#000',
+      border_radius: '50',
+      border_radius_unit: '%',
+      background_color: '#fff',
+      hour_show: 'true', hour_width: '6', hour_length: '80', hour_color: '#000', hour_radius: '3',
+      minute_show: 'true', minute_width: '4', minute_length: '110', minute_color: '#444', minute_radius: '2',
+      second_show: 'true', second_width: '2', second_length: '130', second_color: 'red', second_radius: '1',
+      show_small: 'true', show_big: 'true',
+      num_font: 'Arial', num_size: '1', num_unit: 'rem', num_weight: 'normal', num_color: '#000', num_oblique: '0',
+      big_font: 'Impact', big_size: '1.5', big_unit: 'rem', big_weight: 'bold', big_color: 'blue', big_oblique: '10'
+    };
+
+    function val(name, def) {
+      const p = new URLSearchParams(window.location.search);
+      const v = p.get(name);
+      return v !== null && v !== '' ? v : def;
+    }
+
+    function inurl(val, def, key) {
+      return val !== def ? `${key}=${encodeURIComponent(val)}&` : '';
+    }
+
+    function buildUrl() {
+      const s = [];
+      const get = (n) => val(n, defaults[n]);
+
+      s.push(inurl(get('size'), defaults.size, 'size'));
+      const border = `${get('border_width')}${get('border_unit')} ${get('border_style')} ${get('border_color')}`;
+      s.push(inurl(border, '10px solid #000', 'border'));
+      const br = `${get('border_radius')}${get('border_radius_unit')}`;
+      s.push(inurl(br, '50%', 'border-radius'));
+      s.push(inurl(get('background_color'), defaults.background_color, 'background-color'));
+
+      ['hour','minute','second'].forEach(k => {
+        s.push(inurl(get(k+'_show'), defaults[k+'_show'], `${k}-show`));
+        s.push(inurl(get(k+'_width'), defaults[k+'_width'], `${k}-width`));
+        s.push(inurl(get(k+'_length'), defaults[k+'_length'], `${k}-length`));
+        s.push(inurl(get(k+'_color'), defaults[k+'_color'], `${k}-color`));
+        s.push(inurl(get(k+'_radius'), defaults[k+'_radius'], `${k}-radius`));
+      });
+
+      s.push(inurl(get('show_small'), defaults.show_small, 'show-small'));
+      s.push(inurl(get('show_big'), defaults.show_big, 'show-big'));
+
+      ['num','big'].forEach(pref => {
+        s.push(inurl(get(pref+'_font'), defaults[pref+'_font'], `${pref}-font`));
+        s.push(inurl(get(pref+'_size') + get(pref+'_unit'), defaults[pref+'_size']+defaults[pref+'_unit'], `${pref}-size`));
+        s.push(inurl(get(pref+'_weight'), defaults[pref+'_weight'], `${pref}-weight`));
+        s.push(inurl(get(pref+'_color'), defaults[pref+'_color'], `${pref}-color`));
+        s.push(inurl(get(pref+'_oblique'), defaults[pref+'_oblique'], `${pref}-oblique`));
+      });
+
+      return `index.html?${s.join('')}`.replace(/&$/, '');
+    }
+
+    function initForm() {
+      const form = document.getElementById('clock-form');
+      const p = new URLSearchParams(window.location.search);
+      [...form.elements].forEach(el => {
+        if (!el.name) return;
+        const v = val(el.name, defaults[el.name]);
+        if (el.type === 'checkbox') {
+          el.checked = (v === 'true');
+        } else {
+          el.value = v;
+        }
+      });
+    }
+
+    function updateAll() {
+      const url = buildUrl();
+      document.getElementById('url').value = url;
+      document.getElementById('clock-frame').src = url;
+    }
+
+    document.getElementById('clock-form').addEventListener('submit', ev => {
+      ev.preventDefault();
+      updateAll();
+      history.replaceState(null, '', document.getElementById('url').value);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initForm();
+      updateAll();
+    });
+  </script>
+</body>
+</html>

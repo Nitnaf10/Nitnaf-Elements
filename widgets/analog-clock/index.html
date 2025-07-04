@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horloge Analogique</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      height: 100vh;
+    }
+
+    .clock {
+      position: relative;
+      background: var(--background-color);
+      border: var(--border);
+      border-radius: var(--border-radius);
+      width: var(--size);
+      height: var(--size);
+    }
+
+    .hand {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform-origin: bottom;
+      transform: translateX(-50%);
+    }
+
+    .center-circle {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      background: var(--border-color);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+
+    .number {
+      position: absolute;
+      transform: translate(-50%, -50%) rotate(var(--tilt));
+      font-family: var(--num-font);
+      font-size: var(--num-size);
+      font-weight: var(--num-weight);
+      color: var(--num-color);
+    }
+
+    .number.big {
+      font-family: var(--big-font);
+      font-size: var(--big-size);
+      font-weight: var(--big-weight);
+      color: var(--big-color);
+    }
+  </style>
+</head>
+<body>
+  <div id="clock" class="clock">
+    <div class="center-circle"></div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+
+    function getParam(key, def) {
+      return params.get(key) ?? def;
+    }
+
+    function getBool(key, def = 'true') {
+      const val = getParam(key, def);
+      return val === '1' || val === 'true';
+    }
+
+    const size = parseInt(getParam('size', 300));
+    const clock = document.getElementById('clock');
+
+    // Apply CSS variables
+    clock.style.setProperty('--size', size + 'px');
+    clock.style.setProperty('--border', `${getParam('border-width', '10')}px ${getParam('border-style', 'solid')} ${getParam('border-color', '#333')}`);
+    clock.style.setProperty('--border-radius', getParam('border-radius', '50%'));
+    clock.style.setProperty('--border-color', getParam('border-color', '#333'));
+    clock.style.setProperty('--background-color', getParam('background-color', 'white'));
+
+    clock.style.setProperty('--num-font', getParam('num-font', 'Arial'));
+    clock.style.setProperty('--num-size', getParam('num-size', '1rem'));
+    clock.style.setProperty('--num-weight', getParam('num-weight', 'normal'));
+    clock.style.setProperty('--num-color', getParam('num-color', '#000'));
+    clock.style.setProperty('--tilt', getParam('num-oblique', '0deg'));
+
+    clock.style.setProperty('--big-font', getParam('big-font', 'Impact'));
+    clock.style.setProperty('--big-size', getParam('big-size', '1.5rem'));
+    clock.style.setProperty('--big-weight', getParam('big-weight', 'bold'));
+    clock.style.setProperty('--big-color', getParam('big-color', 'blue'));
+    clock.style.setProperty('--big-tilt', getParam('big-oblique', '10deg'));
+
+    const hands = {
+      hour:   { show: getBool('hour-show'),   width: getParam('hour-width', '6') + 'px',   length: getParam('hour-length', size / 3) + 'px',   color: getParam('hour-color', '#000'), radius: getParam('hour-radius', '3') + 'px' },
+      minute: { show: getBool('minute-show'), width: getParam('minute-width', '4') + 'px', length: getParam('minute-length', size / 2.5) + 'px', color: getParam('minute-color', '#444'), radius: getParam('minute-radius', '2') + 'px' },
+      second: { show: getBool('second-show'), width: getParam('second-width', '2') + 'px', length: getParam('second-length', size / 2) + 'px',   color: getParam('second-color', 'red'), radius: getParam('second-radius', '1') + 'px' },
+    };
+
+    // Create hands
+    for (const [type, config] of Object.entries(hands)) {
+      if (config.show) {
+        const hand = document.createElement('div');
+        hand.className = `hand ${type}-hand`;
+        hand.id = `${type}-hand`;
+        hand.style.width = config.width;
+        hand.style.height = config.length;
+        hand.style.backgroundColor = config.color;
+        hand.style.borderRadius = config.radius;
+        clock.appendChild(hand);
+      }
+    }
+
+    // Add numbers
+    const showSmall = getBool('show-small');
+    const showBig = getBool('show-big');
+
+    for (let i = 1; i <= 12; i++) {
+      const angle = (i * 30 - 90) * (Math.PI / 180);
+      const r = size * 0.42;
+      const x = 50 + Math.cos(angle) * r / (size / 100);
+      const y = 50 + Math.sin(angle) * r / (size / 100);
+      const isBig = i % 3 === 0;
+
+      if (!isBig && !showSmall) continue;
+      if (isBig && !showBig) continue;
+
+      const div = document.createElement('div');
+      div.className = 'number' + (isBig ? ' big' : '');
+      div.textContent = i;
+      div.style.left = `${x}%`;
+      div.style.top = `${y}%`;
+      clock.appendChild(div);
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const s = now.getSeconds();
+      const m = now.getMinutes();
+      const h = now.getHours();
+
+      const sDeg = (s / 60) * 360 + 90;
+      const mDeg = ((m + s / 60) / 60) * 360 + 90;
+      const hDeg = ((h % 12 + m / 60) / 12) * 360 + 90;
+
+      if (hands.second.show) document.getElementById('second-hand').style.transform = `translateX(-50%) rotate(${sDeg}deg)`;
+      if (hands.minute.show) document.getElementById('minute-hand').style.transform = `translateX(-50%) rotate(${mDeg}deg)`;
+      if (hands.hour.show)   document.getElementById('hour-hand').style.transform = `translateX(-50%) rotate(${hDeg}deg)`;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+</html>
