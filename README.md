@@ -1,3 +1,5 @@
+<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
 #Nitnaf Elements
 
 Nitnaf Elements is a collection of modular and customizable web components designed for easy integration into your projects. Each widget is lightweight, stylable, and can be configured through URL parameters, offering maximum flexibility for developers.
@@ -32,3 +34,4 @@ For any questions or suggestions, feel free to reach out to me:
 #
 
 To make the [Widget page](https://nitnaf10.github.io/Nitnaf-Elements/Widget.html) of this project I use devicon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-plain.svg" alt="Devicon Logo" class="devicon-logo" width="16" height="16">
+<i class="devicon-devicon-plain"></i>
