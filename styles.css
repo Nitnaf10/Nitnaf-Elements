@@ -137,7 +137,8 @@ main {
   margin-top: 10px;
 }
 
-.flex > p {
+.flex > p,
+.flex > i{
   border-radius: 5em;
   padding: 0.5rem;
   background-color: lightgrey;
@@ -149,7 +150,8 @@ main {
   transition: 0.2s transform ease-in-out;
 }
 
-.flex > p:hover {
+.flex > p:hover,
+.flex > i:hover {
   transform: scale(1.5);
 }
 
