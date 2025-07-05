@@ -1,3 +1,53 @@
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    color: #333;
+  }
+
+  h1 {
+    color: #4CAF50;
+    text-align: center;
+  }
+
+  h2 {
+    color: #333;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+  }
+
+  h3 {
+    color: #4CAF50;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  ul {
+    list-style-type: square;
+    margin-left: 20px;
+  }
+
+  a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-info {
+    margin-top: 20px;
+  }
+
+  .devicon-logo {
+    vertical-align: middle;
+  }
+</style>
 
 # Nitnaf Elements
 
@@ -32,4 +82,4 @@ For any questions or suggestions, feel free to reach out to me:
 
 #
 
-To make the [Widget page](https://nitnaf10.github.io/Nitnaf-Elements/Widget.html) of this project I use devicon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-plain.svg" alt="Devicon Logo" width="16" height="16">
+To make the [Widget page](https://nitnaf10.github.io/Nitnaf-Elements/Widget.html) of this project I use devicon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-plain.svg" alt="Devicon Logo" class="devicon-logo" width="16" height="16">
