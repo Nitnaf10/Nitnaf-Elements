@@ -1,4 +1,4 @@
-<style>
+<head><style>
   body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -47,7 +47,7 @@
   .devicon-logo {
     vertical-align: middle;
   }
-</style>
+</style><head>
 
 # Nitnaf Elements
 
