@@ -5,19 +5,19 @@ styleSheet.type = "text/css";
 const generateParamsHTML = (params) => {
   return (params || []).map(param => {
     const className = param
-      .replace(/[^a-zA-Z0-9 ]/g, '')
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join('');
-    return `<p class="${className}">${param}</p>`;
-  }).join('');
+      .replace(/[^a-zA-Z0-9 ]/g, '') // Remove special characters
+      .split(' ') // Split by spaces
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize first letter
+      .join(''); // Join back into a single string
+    return `<p class="${className}">${param}</p>`; // Create a paragraph with the class name
+  }).join(''); // Join all paragraphs into a single string
 };
 
 const generateLanguagesHTML = (languages) => {
   return (languages || []).map(language => {
     const langClass = CodeLanguages[0][language]; // Get the Devicon class from CodeLanguages
-    return `<i class="${langClass}"></i>`;
-  }).join('');
+    return `<i class="${langClass}"></i>`; // Create an icon element for the language
+  }).join(''); // Join all icons into a single string
 };
 
 // Function to check for SASS files
@@ -29,8 +29,8 @@ widgets.forEach(widget => {
   const div = document.createElement('div');
   div.className = 'widget';
 
-  const paramsHTML = generateParamsHTML(widget["params-text"]);
-  const languagesHTML = generateLanguagesHTML(widget["languages"]);
+  const paramsHTML = generateParamsHTML(widget["params-text"]); // Generate HTML for parameters
+  const languagesHTML = generateLanguagesHTML(widget["languages"]); // Generate HTML for languages
 
   let cssDownloadButton = '';
   if (containsSass(widget)) {
@@ -41,8 +41,8 @@ widgets.forEach(widget => {
     <div>
       <h2>${widget.name}</h2>
       <p class="short">${widget.short}</p>
-      <div class="flex">${paramsHTML}</div>
-      <div class="flex">${languagesHTML}</div>
+      <div class="flex">${paramsHTML}</div> <!-- Display parameters -->
+      <div class="flex">${languagesHTML}</div> <!-- Display languages -->
       <div class="flex">
         <a class="edit" href="widgets/${widget.url}/set.html" target="_blank">Edit widget</a>
         <a class="download dHTML" href="widgets/${widget.url}/${widget.name} Html.zip" download>Download the project in HTML</a>
@@ -53,7 +53,7 @@ widgets.forEach(widget => {
     <iframe style="border:none;" src="widgets/${widget.url}/index.html?${widget.params}"></iframe>
   `;
 
-  container.appendChild(div);
+  container.appendChild(div); // Append the widget to the container
 });
 
 // Generate styles for parameters
@@ -66,4 +66,4 @@ elements.forEach((className, index) => {
   `;
 });
 
-document.head.appendChild(styleSheet);
+document.head.appendChild(styleSheet); // Append the style sheet to the document head
