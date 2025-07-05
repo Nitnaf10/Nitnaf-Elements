@@ -32,4 +32,4 @@ For any questions or suggestions, feel free to reach out to me:
 
 #
 
-To make the [Widget page](https://nitnaf10.github.io/Nitnaf-Elements/Widget.html) of this project I use devicon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-plain.svg" alt="Devicon Logo" width="24" height="24">
+To make the [Widget page](https://nitnaf10.github.io/Nitnaf-Elements/Widget.html) of this project I use devicon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-plain.svg" alt="Devicon Logo" width="16" height="16">
