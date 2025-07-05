@@ -1,4 +1,4 @@
-<h1 style="font-size: 2.5em; color: #333; text-align: center;">Nitnaf Elements</h1>
+#Nitnaf Elements
 
 Nitnaf Elements is a collection of modular and customizable web components designed for easy integration into your projects. Each widget is lightweight, stylable, and can be configured through URL parameters, offering maximum flexibility for developers.
 
