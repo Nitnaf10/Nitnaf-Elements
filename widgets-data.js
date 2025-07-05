@@ -65,5 +65,6 @@ const CodeLanguages = [{
   "PHP": "devicon-php-plain",
   "HTML": "devicon-html5-plain",
   "CSS": "devicon-css3-plain",
+  "MYSQL": "devicon-mysql-original",
   "SASS": "devicon-sass-original"
 }];
