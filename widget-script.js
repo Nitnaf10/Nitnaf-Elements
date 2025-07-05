@@ -15,16 +15,12 @@ const generateParamsHTML = (params) => {
 
 const generateLanguagesHTML = (languages) => {
   return (languages || []).map(language => {
-    const className = language
-      .replace(/[^a-zA-Z0-9 ]/g, '')
-      .split(' ')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join('');
-    return `<p class="${className}"></p>`;
+    const langClass = CodeLanguages[0][language]; // Get the Devicon class from CodeLanguages
+    return `<i class="${langClass}"></i>`;
   }).join('');
 };
 
-// Fonction pour vérifier la présence de fichiers SASS
+// Function to check for SASS files
 const containsSass = (widget) => {
   return widget.files && (widget.files.includes('.scss') || widget.files.includes('.sass'));
 };
@@ -38,7 +34,7 @@ widgets.forEach(widget => {
 
   let cssDownloadButton = '';
   if (containsSass(widget)) {
-    cssDownloadButton = `<a class="download dCSS" href="widgets/${widget.url}/${widget.name} Css.zip" download>Download the project's css</a>`;
+    cssDownloadButton = `<a class="download dCSS" href="widgets/${widget.url}/${widget.name} Css.zip" download>Download the project's CSS</a>`;
   }
 
   div.innerHTML = `
@@ -60,22 +56,12 @@ widgets.forEach(widget => {
   container.appendChild(div);
 });
 
+// Generate styles for parameters
 elements.forEach((className, index) => {
   const hue = index * 40;
   styleSheet.innerHTML += `
-    .flex>.${className} {
+    .flex > .${className} {
       background-color: hsl(${hue}, 43.2%, 85.5%);
-    }
-    .flex>.${className}:before {
-      content: url('images/${className}.svg');
-    }
-  `;
-});
-
-CodeLanguages.forEach(className => {
-  styleSheet.innerHTML += `
-    .flex>.${className} {
-      content: url('images/${className}.svg');
     }
   `;
 });
