@@ -57,10 +57,11 @@ const elements = [
   'Padding',
   'Size',
 ];
-const CodeLanguages = [
-  "JS",
-  "PHP",
-  "HTML",
-  "CSS",
-  "SASS"
-]
+const CodeLanguages = [{
+  "JS":"devicon-javascript-plain" ,
+  "PHP":"devicon-php-plain",
+  "HTML":"devicon-html5-plain",
+  "CSS":"devicon-css3-plain",
+  "SASS":"devicon-sass-original"
+}]
+}]
