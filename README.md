@@ -6,6 +6,16 @@ Nitnaf Elements is a collection of modular and customizable web components desig
 
 Nitnaf Elements provides a gallery of web widgets that can be used to enhance your applications and websites. Each widget is designed to be easily customizable, allowing users to modify parameters directly via the URL.
 
+## Programmation Languages
+
+In this project we can find some programming language like:
+ - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" alt="Html Logo" class="html-logo" width="16" height="16"> Html
+ - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" alt="Css Logo" class="css-logo" width="16" height="16"> Css
+ - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" alt="javascript Logo" class="javascript-logo" width="16" height="16"> JS
+ - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg" alt="Php Logo" class="php-logo" width="16" height="16"> Php
+ - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" alt="Sass Logo" class="sass-logo" width="16" height="16"> Sass
+ - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="Mysql Logo" class="mysql-logo" width="16" height="16"> MySql
+
 ## Features
 
 -   **Modular Widgets**: Easily integrate components into your projects.
