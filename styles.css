@@ -148,6 +148,7 @@ main {
   align-items: center;
   justify-content: center;
   transition: 0.2s transform ease-in-out;
+  color: black;
 }
 
 .flex > p:hover,
