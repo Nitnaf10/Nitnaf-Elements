@@ -1,46 +1,105 @@
-<div style="all:unset;">
- # Nitnaf Elements
+<div style="text-align: center; background-color: #181823; color: white; padding: 2em 0; margin-bottom: 2em;">
+    <h1>Nitnaf Elements</h1>
+</div>
 
-Nitnaf Elements is a collection of modular and customizable web components designed for easy integration into your projects. Each widget is lightweight, stylable, and can be configured through URL parameters, offering maximum flexibility for developers.
+<p style="font-family: Arial, sans-serif; color: #333;">
+    Nitnaf Elements est une collection de composants web modulaires et personnalisables, conçus pour une intégration facile
+    dans vos projets. Chaque widget est léger, stylable et peut être configuré via des paramètres d'URL, offrant ainsi une
+    flexibilité maximale pour les développeurs.
+</p>
 
 ## Description
 
-Nitnaf Elements provides a gallery of web widgets that can be used to enhance your applications and websites. Each widget is designed to be easily customizable, allowing users to modify parameters directly via the URL.
+<p style="font-family: Arial, sans-serif; color: #333;">
+    Nitnaf Elements propose une galerie de widgets web qui peuvent être utilisés pour améliorer vos applications et sites
+    web. Chaque widget est conçu pour être facilement personnalisable, permettant aux utilisateurs de modifier les
+    paramètres directement via l'URL.
+</p>
 
-## Programmation Languages
+## Langages de Programmation
 
-In this project we can find some programming language like:
- - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" alt="Html Logo" class="html-logo" width="16" height="16"> Html
- - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" alt="Css Logo" class="css-logo" width="16" height="16"> Css
- - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" alt="javascript Logo" class="javascript-logo" width="16" height="16"> JS
- - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg" alt="Php Logo" class="php-logo" width="16" height="16"> Php
- - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" alt="Sass Logo" class="sass-logo" width="16" height="16"> Sass
- - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="Mysql Logo" class="mysql-logo" width="16" height="16"> MySql
+<p style="font-family: Arial, sans-serif; color: #333;">Dans ce projet, vous trouverez les langages de programmation suivants :</p>
 
-## Features
+<div style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; margin: 1em 0;">
+    <div style="display: flex; align-items: center; background-color: #fff; border-radius: 5px; padding: 0.5em 1em; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" alt="Html Logo" width="16" height="16">
+        <strong style="margin-left: 0.5em;">HTML</strong>
+    </div>
+    <div style="display: flex; align-items: center; background-color: #fff; border-radius: 5px; padding: 0.5em 1em; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" alt="Css Logo" width="16" height="16">
+        <strong style="margin-left: 0.5em;">CSS</strong>
+    </div>
+    <div style="display: flex; align-items: center; background-color: #fff; border-radius: 5px; padding: 0.5em 1em; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" alt="Javascript Logo" width="16" height="16">
+        <strong style="margin-left: 0.5em;">JavaScript</strong>
+    </div>
+    <div style="display: flex; align-items: center; background-color: #fff; border-radius: 5px; padding: 0.5em 1em; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg" alt="Php Logo" width="16" height="16">
+        <strong style="margin-left: 0.5em;">PHP</strong>
+    </div>
+    <div style="display: flex; align-items: center; background-color: #fff; border-radius: 5px; padding: 0.5em 1em; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" alt="Sass Logo" width="16" height="16">
+        <strong style="margin-left: 0.5em;">Sass</strong>
+    </div>
+    <div style="display: flex; align-items: center; background-color: #fff; border-radius: 5px; padding: 0.5em 1em; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="Mysql Logo" width="16" height="16">
+        <strong style="margin-left: 0.5em;">MySQL</strong>
+    </div>
+</div>
 
--   **Modular Widgets**: Easily integrate components into your projects.
--   **URL Customization**: Change widget parameters directly in the URL.
--   **Compatibility**: Works on all modern browsers.
--   **Documentation**: Each widget comes with documentation to facilitate its use.
+<h2 style="color: #181823;">Fonctionnalités</h2>
+
+<ul style="font-family: Arial, sans-serif; color: #333; list-style-type: none; padding: 0;">
+    <li style="background: #e7e7e7; margin: 0.5em 0; padding: 0.5em; border-radius: 5px;">
+        <strong>Widgets Modulaires</strong> : Intégrez facilement des composants dans vos projets.
+    </li>
+    <li style="background: #e7e7e7; margin: 0.5em 0; padding: 0.5em; border-radius: 5px;">
+        <strong>Personnalisation par URL</strong> : Modifiez les paramètres des widgets directement dans l'URL.
+    </li>
+    <li style="background: #e7e7e7; margin: 0.5em 0; padding: 0.5em; border-radius: 5px;">
+        <strong>Compatibilité</strong> : Fonctionne sur tous les navigateurs modernes.
+    </li>
+    <li style="background: #e7e7e7; margin: 0.5em 0; padding: 0.5em; border-radius: 5px;">
+        <strong>Documentation</strong> : Chaque widget est accompagné d'une documentation pour faciliter son utilisation.
+    </li>
+</ul>
 
 ## Nitnaf Element
 
-To explore the widgets online, visit the [Nitnaf Elements](https://nitnaf10.github.io/Nitnaf-Elements/) website. You will find an interactive presentation of all available widgets.
+<p style="font-family: Arial, sans-serif; color: #333;">
+    Pour explorer les widgets en ligne, visitez le site <a href="https://nitnaf10.github.io/Nitnaf-Elements/" style="color: #007bff; text-decoration: none;">Nitnaf Elements</a>. Vous
+    y trouverez une présentation interactive de tous les widgets disponibles.
+</p>
 
-## License
+## Licence
 
-This project is licensed under the MIT License. For more details, please refer to the [MIT.html](https://duckduckgo.com/MIT.html) file.
+<p style="font-family: Arial, sans-serif; color: #333;">
+    Ce projet est sous licence MIT. Pour plus de détails, veuillez consulter le fichier
+    <a href="https://duckduckgo.com/MIT.html" style="color: #007bff; text-decoration: none;">MIT.html</a>.
+</p>
 
 ## Contact
 
-For any questions or suggestions, feel free to reach out to me:
+<p style="font-family: Arial, sans-serif; color: #333;">
+    Pour toute question ou suggestion, n'hésitez pas à me contacter :
+</p>
 
--   **GitHub**: [Nitnaf10](https://github.com/Nitnaf10)
--   **Discord**: [Nitnaf's Tools](https://discord.gg/XVyHTVMwU4)
--   **Portfolio**: [Nitnaf's Portfolio](https://nitnaf10.github.io/Portofolio/)
+<ul style="font-family: Arial, sans-serif; color: #333; list-style-type: none; padding: 0;">
+    <li style="margin: 0.5em 0;">
+        <strong>GitHub</strong> : <a href="https://github.com/Nitnaf10" style="color: #007bff; text-decoration: none;">Nitnaf10</a>
+    </li>
+    <li style="margin: 0.5em 0;">
+        <strong>Discord</strong> : <a href="https://discord.gg/XVyHTVMwU4" style="color: #007bff; text-decoration: none;">Nitnaf's Tools</a>
+    </li>
+    <li style="margin: 0.5em 0;">
+        <strong>Portfolio</strong> : <a href="https://nitnaf10.github.io/Portofolio/" style="color: #007bff; text-decoration: none;">Nitnaf's Portfolio</a>
+    </li>
+</ul>
 
-#
+---
 
-To make the [Widget page](https://nitnaf10.github.io/Nitnaf-Elements/Widget.html) of this project I use devicon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-plain.svg" alt="Devicon Logo" class="devicon-logo" width="16" height="16">
-</div>
+<p style="font-family: Arial, sans-serif; color: #333;">
+    Pour créer la <a href="https://nitnaf10.github.io/Nitnaf-Elements/Widget.html" style="color: #007bff; text-decoration: none;">page des widgets</a> de ce projet, j'ai utilisé
+    Devicon :
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-plain.svg" alt="Devicon Logo" width="16" height="16">
+</p>
