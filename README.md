@@ -29,3 +29,7 @@ For any questions or suggestions, feel free to reach out to me:
 -   **GitHub**: [Nitnaf10](https://github.com/Nitnaf10)
 -   **Discord**: [Nitnaf's Tools](https://discord.gg/XVyHTVMwU4)
 -   **Portfolio**: [Nitnaf's Portfolio](https://nitnaf10.github.io/Portofolio/)
+
+#
+
+To make the [Widget page](https://nitnaf10.github.io/Nitnaf-Elements/Widget.html) of this project I use devicon: ![enter image description here](https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/devicon/devicon-plain.svg)
