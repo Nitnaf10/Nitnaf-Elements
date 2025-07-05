@@ -1,7 +1,8 @@
-const widgets = [{
+const widgets = [
+  {
     name: "Digital Clock",
     short: "Customizable stylish digital clock",
-    "params-text": [
+    paramsText: [
       "Background",
       "Bold",
       "Border",
@@ -13,7 +14,7 @@ const widgets = [{
       "Padding"
     ],
     url: "digital-clock",
-    "languages": [
+    languages: [
       "PHP",
       "HTML",
       "JS",
@@ -23,8 +24,8 @@ const widgets = [{
   },
   {
     name: "Analog Clock",
-    short: "Customizable stylish anaog clock",
-    "params-text": [
+    short: "Customizable stylish analog clock",
+    paramsText: [
       "Background",
       "Bold",
       "Border",
@@ -37,19 +38,20 @@ const widgets = [{
       "Size"
     ],
     url: "analog-clock",
-    "languages": [
+    languages: [
       "PHP",
       "JS",
       "CSS"
     ],
-    params: "http://votre-site.com/horloge.html?size=100&border-color=green&background-color=lightgreen&hour-show=1&minute-show=1&second-show=1&num-color=darkgreen&num-size=1.5rem&show-small=0"
+    params: "http://your-site.com/clock.html?size=100&border-color=green&background-color=lightgreen&hour-show=1&minute-show=1&second-show=1&num-color=darkgreen&num-size=1.5rem&show-small=0"
   }
 ];
+
 const elements = [
   'Background',
   'Bold',
   'Border',
-  'BorderRadius',
+  'Border Radius',
   'Color',
   'Display',
   'Font',
@@ -57,11 +59,11 @@ const elements = [
   'Padding',
   'Size',
 ];
+
 const CodeLanguages = [{
-  "JS":"devicon-javascript-plain" ,
-  "PHP":"devicon-php-plain",
-  "HTML":"devicon-html5-plain",
-  "CSS":"devicon-css3-plain",
-  "SASS":"devicon-sass-original"
-}]
-}]
+  "JS": "devicon-javascript-plain",
+  "PHP": "devicon-php-plain",
+  "HTML": "devicon-html5-plain",
+  "CSS": "devicon-css3-plain",
+  "SASS": "devicon-sass-original"
+}];
