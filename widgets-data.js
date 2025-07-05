@@ -44,7 +44,7 @@ const widgets = [
       "CSS",
       "HTML"
     ],
-    params: "http://your-site.com/clock.html?size=100&border-color=black&background-color=transparent&second-show=0&num-size=1.5rem&show-small=0&size=100&big-num-color=black"
+    params: "http://your-site.com/clock.html?size=100&border-color=black&background-color=transparent&second-show=0&num-size=1.5rem&show-small=0&size=100&big-color=black"
   }
 ];
 
