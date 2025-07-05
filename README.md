@@ -1,3 +1,1 @@
-<div>
-<iframe src="README.html" style="border:0px;width:100%;height:100%;margin:0;padding:0;"></iframe>
-</div>
+<iframe width="560" height="315" src="README.html" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
