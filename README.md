@@ -1,6 +1,6 @@
 ![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge&color=rgb(0%2C200%2C100))  ![GitHub contributors](https://img.shields.io/github/contributors/Nitnaf10/Nitnaf-Elements?style=for-the-badge&color=rgb(0%2C200%2C100)) ![lastcommit](https://img.shields.io/github/last-commit/Nitnaf10/Nitnaf-Elements?style=for-the-badge&color=rgb(0%2C200%2C100)) ![Stars](https://img.shields.io/github/stars/Nitnaf10/Nitnaf-Elements?style=for-the-badge&color=rgb(0%2C200%2C100)) ![Watchers](https://img.shields.io/github/watchers/Nitnaf10/Nitnaf-Elements?style=for-the-badge&color=rgb(0%2C200%2C100)) ![Discord](https://img.shields.io/discord/1369727856242069574?style=for-the-badge&logo=discord&label=Discord&link=https%3A%2F%2Fdiscord.gg%2FXVyHTVMwU4&link=https%3A%2F%2Fdiscord.gg%2FXVyHTVMwU4&color=rgb(0%2C200%2C100))
 
-<h1 style="text-align: center">Nitnaf Elements</h1>
+<h1 align="center">Nitnaf Elements</h1>
 
 <p style="font-family: Arial, sans-serif; color: #333;">
     Nitnaf Elements est une collection de composants web modulaires et personnalisables, conçus pour une intégration facile
