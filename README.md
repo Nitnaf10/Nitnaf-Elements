@@ -1,3 +1,5 @@
+![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge&color=rgb(0%2C200%2C100))  ![GitHub contributors](https://img.shields.io/github/contributors/Nitnaf10/Nitnaf-Elements?style=for-the-badge&color=rgb(0%2C200%2C100)) ![lastcommit](https://img.shields.io/github/last-commit/Nitnaf10/Nitnaf-Elements?style=for-the-badge&color=rgb(0%2C200%2C100)) ![Stars](https://img.shields.io/github/stars/Nitnaf10/Nitnaf-Elements?style=for-the-badge&color=rgb(0%2C200%2C100)) ![Watchers](https://img.shields.io/github/watchers/Nitnaf10/Nitnaf-Elements?style=for-the-badge&color=rgb(0%2C200%2C100)) ![Discord](https://img.shields.io/discord/1369727856242069574?style=for-the-badge&logo=discord&label=Discord&link=https%3A%2F%2Fdiscord.gg%2FXVyHTVMwU4&link=https%3A%2F%2Fdiscord.gg%2FXVyHTVMwU4&color=rgb(0%2C200%2C100))
+
 <div style="text-align: center; background-color: #181823; color: white; padding: 2em 0; margin-bottom: 2em;">
     <h1>Nitnaf Elements</h1>
 </div>
